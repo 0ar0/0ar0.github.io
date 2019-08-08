@@ -45,11 +45,11 @@
 <div class="overlay" style="background: #4d4d4d"></div>
 <div class="intrude-less">
 	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			<img src="" class="js-avatar">
+		<a href="/hexo/" class="profilepic">
+			<img src="/hexo/img/head.jpg" class="js-avatar">
 		</a>
 		<hgroup>
-		  <h1 class="header-author"><a href="/">尐乙</a></h1>
+		  <h1 class="header-author"><a href="/hexo/">尐乙</a></h1>
 		</hgroup>
 		
 		<p class="header-subtitle">这是来自尐乙的零域博客，将开启自己的编程之旅</p>
@@ -60,18 +60,12 @@
 			
 				<li><a href="/hexo/">主页</a></li>
 	        
-				<li><a href="/hexo/tags/随笔/">随笔</a></li>
-	        
 			</ul>
 		</nav>
 		<nav class="header-smart-menu">
     		
     			
     			<a q-on="click: openSlider(e, 'innerArchive')" href="javascript:void(0)">所有文章</a>
-    			
-            
-    			
-    			<a q-on="click: openSlider(e, 'friends')" href="javascript:void(0)">友链</a>
     			
             
     			
@@ -82,14 +76,6 @@
 		<nav class="header-nav">
 			<div class="social">
 				
-					<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-		        
-					<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-		        
-					<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-		        
-					<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
-		        
 			</div>
 		</nav>
 	</header>		
@@ -106,7 +92,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="" class="js-avatar">
+				<img src="/hexo/img/head.jpg" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">尐乙</h1>
@@ -118,21 +104,11 @@
 			
 				
 			
-				
-			
 			
 			
 			<nav class="header-nav">
 				<div class="social">
 					
-						<a class="github" target="_blank" href="#" title="github"><i class="icon-github"></i></a>
-			        
-						<a class="weibo" target="_blank" href="#" title="weibo"><i class="icon-weibo"></i></a>
-			        
-						<a class="rss" target="_blank" href="#" title="rss"><i class="icon-rss"></i></a>
-			        
-						<a class="zhihu" target="_blank" href="#" title="zhihu"><i class="icon-zhihu"></i></a>
-			        
 				</div>
 			</nav>
 
@@ -140,9 +116,7 @@
 				<ul style="width: 50%">
 				
 				
-					<li style="width: 50%"><a href="/hexo/">主页</a></li>
-		        
-					<li style="width: 50%"><a href="/hexo/tags/随笔/">随笔</a></li>
+					<li style="width: 100%"><a href="/hexo/">主页</a></li>
 		        
 				</ul>
 			</nav>
@@ -179,7 +153,137 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>Python3 基础语法<br>编码<br>默认情况下，Python 3 源码文件以 UTF-8 编码，所有字符串都是 unicode 字符串。 当然你也可以为源码文件指定不同的编码：</p>
+<pre><code># -*- coding: cp-1252 -*-</code></pre><p>上述定义允许在源文件中使用 Windows-1252 字符集中的字符编码，对应适合语言为保加利亚语、白罗斯语、马其顿语、俄语、塞尔维亚语。</p>
+<p>标识符</p>
+<ol>
+<li>第一个字符必须是字母表中字母或下划线 _ 。</li>
+<li>标识符的其他的部分由字母、数字和下划线组成。</li>
+<li>标识符对大小写敏感。</li>
+<li>在 Python 3 中，非 ASCII 标识符也是允许的了。</li>
+</ol>
+<h3 id="python保留字"><a href="#python保留字" class="headerlink" title="python保留字"></a>python保留字</h3><p>保留字即关键字，我们不能把它们用作任何标识符名称。Python 的标准库提供了一个 keyword 模块，可以输出当前版本的所有关键字：<br>    &gt;&gt;&gt; import keyword<br>    &gt;&gt;&gt; keyword.kwlist<br>    [‘False’, ‘None’, ‘True’, ‘and’, ‘as’, ‘assert’, ‘break’, ‘class’, ‘continue’, ‘def’, ‘del’, ‘elif’, ‘else’, ‘except’, ‘finally’, ‘for’, ‘from’, ‘global’, ‘if’, ‘import’, ‘in’, ‘is’, ‘lambda’, ‘nonlocal’, ‘not’, ‘or’, ‘pass’, ‘raise’, ‘return’, ‘try’, ‘while’, ‘with’, ‘yield’]</p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>Python中单行注释以 # 开头，实例如下：<br>    #!/usr/bin/python3<br>    # 第一个注释<br>    print (“Hello, Python!”) # 第二个注释</p>
+<p>在 Windows 下可以不写第一行注释: <code>#!/usr/bin/python3</code><br>第一行注释标的是指向 python 的路径，告诉操作系统执行这个脚本的时候，调用 /usr/bin 下的 python 解释器。<br>执行以上代码，输出结果为：</p>
+<pre><code>Hello, Python!</code></pre><p>多行注释可以用多个 # 号，还有 ‘’’ 和 “””：<br>    #!/usr/bin/python3<br><br>    # 第一个注释<br>    # 第二个注释<br><br>    ‘’’<br>    第三注释<br>    第四注释<br>    ‘’’<br><br>    “””<br>    第五注释<br>    第六注释<br>    “””<br>    print (“Hello, Python!”)</p>
+<p>执行以上代码，输出结果为：<br>    Hello, Python!</p>
+<h3 id="行与缩进"><a href="#行与缩进" class="headerlink" title="行与缩进"></a>行与缩进</h3><p>python最具特色的就是使用缩进来表示代码块，不需要使用大括号 {} 。</p>
+<p>缩进的空格数是可变的，但是同一个代码块的语句必须包含相同的缩进空格数。实例如下：</p>
+<pre><code>if True:
+    print (&quot;True&quot;)
+else:
+    print (&quot;False&quot;)</code></pre><p>以下代码最后一行语句缩进数的空格数不一致，会导致运行错误：</p>
+<pre><code>if True:
+    print (&quot;Answer&quot;)
+    print (&quot;True&quot;)
+else:
+    print (&quot;Answer&quot;)
+  print (&quot;False&quot;)    # 缩进不一致，会导致运行错误</code></pre><p>以上程序由于缩进不一致，执行后会出现类似以下错误：</p>
+<pre><code> File &quot;test.py&quot;, line 6
+    print (&quot;False&quot;)    # 缩进不一致，会导致运行错误
+                                      ^
+IndentationError: unindent does not match any outer indentation level</code></pre><h3 id="多行语句"><a href="#多行语句" class="headerlink" title="多行语句"></a>多行语句</h3><p>Python 通常是一行写完一条语句，但如果语句很长，我们可以使用反斜杠()来实现多行语句，例如：</p>
+<pre><code>total = item_one + \
+        item_two + \
+        item_three</code></pre><p>在 [], {}, 或 () 中的多行语句，不需要使用反斜杠()，例如：</p>
+<pre><code>total = [&apos;item_one&apos;, &apos;item_two&apos;, &apos;item_three&apos;,
+        &apos;item_four&apos;, &apos;item_five&apos;]</code></pre><h3 id="数字-Number-类型"><a href="#数字-Number-类型" class="headerlink" title="数字(Number)类型"></a>数字(Number)类型</h3><p>python中数字有四种类型：整数、布尔型、浮点数和复数。</p>
+<ul>
+<li>int (整数), 如 1, 只有一种整数类型 int，表示为长整型，没有 python2 中的 Long。</li>
+<li>bool (布尔), 如 True。</li>
+<li>float (浮点数), 如 1.23、3E-2</li>
+<li>complex (复数), 如 1 + 2j、 1.1 + 2.2j</li>
+</ul>
+<h3 id="字符串-String"><a href="#字符串-String" class="headerlink" title="字符串(String)"></a>字符串(String)</h3><ul>
+<li>python中单引号和双引号使用完全相同。</li>
+<li>使用三引号(‘’’或”””)可以指定一个多行字符串。</li>
+<li>转义符 ‘&#39;</li>
+<li>反斜杠可以用来转义，使用r可以让反斜杠不发生转义。。 如 r”this is a line with \n” 则\n会显示，并不是换行。</li>
+<li>按字面意义级联字符串，如”this “ “is “ “string”会被自动转换为this is string。</li>
+<li>字符串可以用 + 运算符连接在一起，用 * 运算符重复。</li>
+<li>Python 中的字符串有两种索引方式，从左往右以 0 开始，从右往左以 -1 开始。</li>
+<li>Python中的字符串不能改变。</li>
+<li>Python 没有单独的字符类型，一个字符就是长度为 1 的字符串。</li>
+<li>字符串的截取的语法格式如下：变量[头下标:尾下标:步长]</li>
+</ul>
+<p>实例1</p>
+<pre><code>word = &apos;字符串&apos;
+sentence = &quot;这是一个句子。&quot;
+paragraph = &quot;&quot;&quot;这是一个段落，
+可以由多行组成&quot;&quot;&quot;</code></pre><p>实例2<br>    #!/usr/bin/python3<br>    str=’Runoob’<br><br>    print(str)                 # 输出字符串<br>    print(str[0:-1])           # 输出第一个到倒数第二个的所有字符<br>    print(str[0])              # 输出字符串第一个字符<br>    print(str[2:5])            # 输出从第三个开始到第五个的字符<br>    print(str[2:])             # 输出从第三个开始的后的所有字符<br>    print(str * 2)             # 输出字符串两次<br>    print(str + ‘你好’)        # 连接字符串<br><br>    print(‘——————————‘)<br><br>    print(‘hello\nrunoob’)      # 使用反斜杠()+n转义特殊字符<br>    print(r’hello\nrunoob’)     # 在字符串前面添加一个 r，表示原始字符串，不会发生转义</p>
+<p>这里的 r 指 raw，即 raw string。</p>
+<p>输出结果为：</p>
+<pre><code>Runoob
+Runoo
+R
+noo
+noob
+RunoobRunoob
+Runoob你好
+------------------------------
+hello
+runoob
+hello\nrunoob</code></pre><h3 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h3><p>函数之间或类的方法之间用空行分隔，表示一段新的代码的开始。类和函数入口之间也用一行空行分隔，以突出函数入口的开始。</p>
+<p>空行与代码缩进不同，空行并不是Python语法的一部分。书写时不插入空行，Python解释器运行也不会出错。但是空行的作用在于分隔两段不同功能或含义的代码，便于日后代码的维护或重构。</p>
+<p>记住：空行也是程序代码的一部分。</p>
+<h3 id="等待用户输入"><a href="#等待用户输入" class="headerlink" title="等待用户输入"></a>等待用户输入</h3><p>执行下面的程序在按回车键后就会等待用户输入：</p>
+<pre><code>#!/usr/bin/python3
+
+input(&quot;\n\n按下 enter 键后退出。&quot;)</code></pre><p>以上代码中 ，”\n\n”在结果输出前会输出两个新的空行。一旦用户按下 enter 键时，程序将退出。</p>
+<h3 id="同一行显示多条语句"><a href="#同一行显示多条语句" class="headerlink" title="同一行显示多条语句"></a>同一行显示多条语句</h3><p>Python可以在同一行中使用多条语句，语句之间使用分号(;)分割，以下是一个简单的实例：</p>
+<pre><code>#!/usr/bin/python3
+
+import sys; x = &apos;runoob&apos;; sys.stdout.write(x + &apos;\n&apos;)</code></pre><p>使用脚本执行以上代码，输出结果为：</p>
+<pre><code>runoob</code></pre><h3 id="多个语句构成代码组"><a href="#多个语句构成代码组" class="headerlink" title="多个语句构成代码组"></a>多个语句构成代码组</h3><p>缩进相同的一组语句构成一个代码块，我们称之代码组。</p>
+<p>像if、while、def和class这样的复合语句，首行以关键字开始，以冒号( : )结束，该行之后的一行或多行代码构成代码组。</p>
+<p>我们将首行及后面的代码组称为一个子句(clause)。</p>
+<p>如下实例：</p>
+<pre><code>if expression : 
+   suite
+elif expression : 
+   suite 
+else : 
+   suite</code></pre><p>Print 输出</p>
+<p>print 默认输出是换行的，如果要实现不换行需要在变量末尾加上 end=””：</p>
+<pre><code>#!/usr/bin/python3
+
+x=&quot;a&quot;
+y=&quot;b&quot;
+# 换行输出
+print( x )
+print( y )
+
+print(&apos;---------&apos;)
+# 不换行输出
+print( x, end=&quot; &quot; )
+print( y, end=&quot; &quot; )
+print()</code></pre><p>以上实例执行结果为：</p>
+<pre><code>a
+b
+---------
+a b</code></pre><h3 id="import-与-from…import"><a href="#import-与-from…import" class="headerlink" title="import 与 from…import"></a>import 与 from…import</h3><ul>
+<li><p>在 python 用 import 或者 from…import 来导入相应的模块。</p>
+</li>
+<li><p>将整个模块(somemodule)导入，格式为： import somemodule</p>
+</li>
+<li><p>从某个模块中导入某个函数,格式为： from somemodule import somefunction</p>
+</li>
+<li><p>从某个模块中导入多个函数,格式为： from somemodule import firstfunc, secondfunc, thirdfunc</p>
+</li>
+<li><p>将某个模块中的全部函数导入，格式为： from somemodule import *</p>
+</li>
+</ul>
+<p>导入 sys 模块</p>
+<pre><code>import sys
+print(&apos;================Python import mode==========================&apos;);
+print (&apos;命令行参数为:&apos;)
+for i in sys.argv:
+    print (i)
+print (&apos;\n python 路径为&apos;,sys.path)</code></pre><p>导入 sys 模块的 argv,path 成员</p>
+<pre><code>from sys import argv,path  #  导入特定的成员
+
+print(&apos;================python from import===================================&apos;)
+print(&apos;path:&apos;,path) # 因为已经导入path成员，所以此处引用时不需要加sys.path</code></pre>
       
 
       
@@ -315,81 +419,6 @@
 
 
   
-    <article id="post-hello-world" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/hexo/2019/08/02/hello-world/">Hello World</a>
-    </h1>
-  
-
-        
-        <a href="/hexo/2019/08/02/hello-world/" class="archive-article-date">
-  	<time datetime="2019-08-02T14:34:33.190Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-08-02</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-        <p class="article-more-link">
-          <a class="article-more-a" href="/hexo/2019/08/02/hello-world/">展开全文 >></a>
-        </p>
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -444,25 +473,17 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
       
       
     
-      
-      
-      
-    
     
 
     <ul style="width: 70%">
     
     
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'innerArchive')"><a href="javascript:void(0)" q-class="active:innerArchive">所有文章</a></li>
       
         
       
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'friends')"><a href="javascript:void(0)" q-class="active:friends">友链</a></li>
-      
-        
-      
-      <li style="width: 33.333333333333336%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
+      <li style="width: 50%" q-on="click: openSlider(e, 'aboutme')"><a href="javascript:void(0)" q-class="active:aboutme">关于我</a></li>
       
         
     </ul>
@@ -525,38 +546,6 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
     	</section>
     
 
-    
-    	<section class="tools-section tools-section-friends" q-show="friends">
-  		
-        <ul class="search-ul">
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接1</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接2</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接3</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接4</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接5</a>
-            </li>
-          
-            <li class="search-li">
-              <a href="http://localhost:4000/" target="_blank" class="search-title"><i class="icon-quo-left icon"></i>友情链接6</a>
-            </li>
-          
-        </ul>
-  		
-    	</section>
     
 
     
